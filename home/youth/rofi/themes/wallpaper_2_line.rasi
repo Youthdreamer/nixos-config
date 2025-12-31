@@ -1,0 +1,57 @@
+ * {
+    /* 柔和粉紫基调 */
+    base-bg: rgba(30, 30, 46, 0.85);      
+    selected-bg: #6c7086;
+
+    background-color:transparent;
+    border-radius: 1.2em;
+    text-color: #cdd6f4;
+}
+
+window {
+    width: 80%;
+    height: 60%;
+    border: 2px;
+    border-radius: 1.2em;
+    border-color: #f4b8e4;   /* #F4B8E4 */
+    location:center;
+    children:[listbox];
+    background-color:@base-bg;
+}
+
+listbox {
+    orientation:vertical;
+    children:[listview];
+}
+
+listview {
+    fixed-height: false;  /* 不固定行数 */  
+    dynamic: true;
+    columns: 4; // 显示两列
+    spacing: 1em;
+    children:[element];
+}
+
+
+element {
+    children: [element-icon, element-text];
+    orientation:vertical;
+    cursor:pointer;
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    font:"FiraCode Nerd Font Mono 16";
+}
+
+element-icon {
+    vertical-align: 0.8;
+    horizontal-align: 0.5;
+    size: 25%;
+}
+
+element selected {
+    background-color: @selected-bg;
+}
+

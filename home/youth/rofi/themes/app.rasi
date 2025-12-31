@@ -1,0 +1,148 @@
+configuration {
+    modi:                      "drun";
+    show-icons:                true;
+    display-drun:              " Applications";
+    drun-display-format:       "{name}";
+}
+
+* {
+    /* 柔和粉紫基调 */
+    base-bg:                    rgba(30, 30, 46, 0.85);      
+    selected-bg:                #6c7086;
+    border:                     #f4b8e4;   /* #F4B8E4 */
+    selected:                   #5c5f77;
+    prompt:                     #313244;
+    background-color:           transparent;
+    text-color:                 #cdd6f4;
+}
+
+window {
+    width:                       30%;
+    border-radius:               20px;
+    border:                      2px;
+    border-radius:               1.2em;
+    border-color:                @border;
+    background-color:            @base-bg;
+    cursor:                      "default";
+}
+
+mainbox {
+    spacing:                     1em;
+    margin:                      2em;
+    padding:                     0px;
+    // border:                      0px solid;
+    // border-radius:               0px 0px 0px 0px;
+    // border-color:                @selected;
+    // background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    // enabled:                     true;
+    // spacing:                     0px;
+    // margin:                      0px;
+    // padding:                     0px;
+    // border:                      0px solid;
+    border-radius:               100%;
+    border-color:                @selected;
+    background-color:            @selected;
+    children:                    [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    padding: 15px;
+    border-radius: 100%;
+    background-color: @prompt;
+}
+
+textbox-prompt-colon {
+    expand:                      false;
+    str:                         "::";
+    padding:                     15px;
+}
+
+entry {
+    padding:                     15px 0px;
+    cursor:                      text;
+    placeholder:                 "Search...";
+}
+
+/*****----- Listview -----*****/
+listview {
+    lines:                       6;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+scrollbar {
+    handle-width:                5px ;
+    handle-color:                @selected;
+    border-radius:               0px;
+    background-color:            @selected;
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @selected;
+    background-color:            transparent;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+}
+element normal.normal {
+    background-color:            transparent;
+}
+
+element selected.normal {
+    border-radius:               100%;
+    background-color:            @selected-bg;
+}
+
+element-icon {
+    padding:                     0.3em;
+    border-radius:               100%;
+    size:                        1.8em;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    font:                        "mono 16";
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Message -----*****/
+error-message {
+    padding:                     20px;
+    border:                      2px solid;
+    border-radius:               20px;
+    border-color:                @selected;
+    background-color:            @base-bg;
+}
+textbox {
+    background-color:            @base-bg;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    highlight:                   none;
+}

@@ -1,0 +1,232 @@
+/**
+ * 设定颜色参数，使用@+变量名使用，
+ * 如:
+ * red：#CD5C5C；
+ * text：@red;
+ */
+ * {
+    background-color: transparent;
+
+    // 背景颜色 
+    bg: #262626;
+    el: #171717;
+    lightel:#404040;
+    darkel: #57534e;
+    title: #ebb619;
+
+    // 白中带灰
+    white: #e9ecef;
+
+    // Grape-葡萄紫
+    grape: #cc5de8;
+    darkgrape: #ae3ec9;
+    lightgrape: #e599f7;
+
+    // Gray-灰色
+    gray: #adb5db;
+    trangray:rgba(173, 181, 219, 0.69); // 透明灰
+    lightgray: #ced4da;
+    darkgray: #191b1e;
+
+    // Pink-粉色
+    pink: #e64980;
+    lightpink: #f06595;
+
+    // Teal-青色
+    teal: #12b886;
+    lightteal: #20c997;
+
+    // Blue-蓝色
+    // violet: #546e7a;
+    grayblue: #546e7a;
+    darkblue: #064554;
+    
+
+    // Violet-紫罗兰
+    lightviolet: #673fe6;
+
+    // Orange-橙色
+    orange: #ff922b;
+
+    transparent:rgba(0,0,0,0); // 颜色透明
+    translucent:rgba(0, 0, 0, 0.7); // 半透明
+    whitetranslucent:rgba(255, 255, 255, 0.2); // 白色半透明
+    
+    base-bg: rgba(30, 30, 46, 0.85);      
+    selected-bg: #6c7086;
+
+    background-color: transparent;
+    text-color: #cdd6f4;
+
+}
+  
+/**
+ * 主窗口，后续模块可以继承此模块中的属性参数
+ */
+window {
+    background-color: @base-bg;
+    transparency: "real"; // 透明
+    border:2px;
+    border-radius:1.2em;
+    border-color: #f4b8e4;   /* #F4B8E4 */
+    location:center;
+    y-offset:-25;
+    children:[mainbox];
+}
+
+mainbox {
+    padding:1.2em;
+    spacing:0.6em;
+    // background-color:inherit;
+    children:[inputbar, listbox];
+}
+
+inputbar {
+    spacing:0em;
+    // padding:0.5em;
+    margin:1em 4em;
+    border-radius:0.8em;
+    border:2px;
+    border-color:@lightteal;
+    // background-color:@darkgray;
+    children:[textbox-prompt-colon, entry];
+}
+
+textbox-prompt-colon {
+    enabled:true;
+    expand:false;
+    str:"";
+    font:"FiraCode Nerd Font Mono 20";
+    padding:0.01em 1em;
+    text-color:@teal;
+}
+
+// icon-current-entry {
+//     size:1.1em;
+// }
+
+entry {
+    cursor-color:@white;
+    placeholder:"Search";
+    placeholder-color:@lightteal;
+    text-color:@teal;
+    vertical-align:0.5;
+    font:"FiraCode Nerd Font Mono 12";
+}
+
+listbox {
+    padding:1em 0em;
+    orientation:horizontal; 
+    vertical-align:0.5;
+    horizontal-align:0.5;
+    background-color:@transparency;
+    children:[mode-switcher, listview];
+}
+
+listview {
+    padding:0.6em;
+    spacing:0.5em;
+    lines: 4; // 限制最大行数
+    columns:2; // 显示两列
+    children:[element];
+    background-color:transparent;
+}
+
+
+element {
+    children: [element-icon, element-text];
+    spacing: 0.1em; // 图标文字的间距
+    orientation:horizontal;
+    cursor:pointer;
+    padding:0.5em;
+    // background-color:@darkgray;
+    border-radius:100%;
+}
+
+element-text {
+    font:inherit;
+    text-color:@lightgray;
+    vertical-align:0.5;
+    background-color:inherit;
+} 
+
+element-icon {
+    size:1em;    
+    background-color:inherit;
+}
+
+
+mode-switcher {
+    enabled:true;
+    width:4em;
+    padding:0.6em;
+    spacing:0.5em;
+    orientation:vertical;
+    // background-color:transparent;
+}
+
+button {
+    cursor:pointer;
+    border-radius:1em;
+    text-color:@gray;
+    background-color:@whitetranslucent;
+    // background-color:red;
+    font:"FiraCode Nerd Font Mono 22";
+}
+
+button selected {
+    background-color:@trangray;
+    text-color:@lightteal;
+}
+
+/**
+* 对选中项目进行高亮(背景颜色改变)
+* 三种 select.normal(常规) select.active(激活) select.urgent(紧急)
+*/
+
+element normal active {
+    text-color:@teal;
+}
+
+element normal urgent {
+    text-color:@grayblue;
+}
+
+element selected normal {
+    background-color:@grayblue;
+}
+
+element normal active {
+    background-color: @grayblue;
+}
+
+element normal urgent {
+    foreground: red;
+}
+
+// 隔行颜色不同
+// element alternate normal {
+//     background-color:@darkel;
+// }
+// element alternate active {
+//     background-color: @lightviolet;
+// }
+
+element alternate urgent {
+    foreground: red;
+}
+
+element selected active {
+    background-color: @darkblue;
+}
+
+element selected urgent {
+    background-color: red;
+}
+
+error-message {
+    background-color: @white;
+    padding: 0.5em;
+    border-radius:1em;
+    font:"Hack Nerd Font Mono 18";
+}
