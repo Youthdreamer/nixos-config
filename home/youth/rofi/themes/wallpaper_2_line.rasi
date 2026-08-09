@@ -48,7 +48,7 @@ element-text {
 element-icon {
     vertical-align: 0.8;
     horizontal-align: 0.5;
-    size: 25%;
+    size: 22%;
 }
 
 element selected {

@@ -1,6 +1,6 @@
 _: {
   imports = [
-    ./mdp.nix
+    ./mpd.nix
     ./go-musicfox.nix
   ];
 }
