@@ -29,6 +29,10 @@
     wayvnc
     # 蓝牙
     blueman
+
+    pkgs-unstable.picgo
+
+    losslesscut-bin # 视频剪辑工具
   ];
 
   programs.claude-code = {

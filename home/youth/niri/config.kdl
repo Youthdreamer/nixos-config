@@ -52,7 +52,7 @@ input {
 
 output "HDMI-A-3" {
     mode "1920x1080@120.030"
-    scale 1.6
+    scale 1.3
     transform "normal"
     position x=1280 y=0
 }
