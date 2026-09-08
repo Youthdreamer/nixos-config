@@ -12,8 +12,8 @@ _: {
   };
 
   #---------壁纸切换脚本--------#
-  home.file.".config/wallpaper/script/swww-rofi.sh" = {
-    source = ./swww-rofi.sh;
+  home.file.".config/wallpaper/script/awww-rofi.sh" = {
+    source = ./awww-rofi.sh;
     executable = true;
   };
 }

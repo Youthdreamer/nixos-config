@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    swww
+    awww
   ];
 
   home.file.".config/wallpaper" = {

@@ -94,12 +94,12 @@
   };
 
   # 禁用所有形式的睡眠和休眠
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=yes         # 如果只想禁用休眠，可以保持 Suspend 启用
-    AllowHibernation=no      # 禁用休眠 (Hibernate)
-    AllowHybridSleep=no      # 禁用混合睡眠 (Hybrid Sleep)
-    AllowSuspendThenHibernate=no # 禁用先睡眠后休眠
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = "yes"; # 如果只想禁用休眠，可以保持 Suspend 启用
+    AllowHibernation = "no"; # 禁用休眠 (Hibernate)
+    AllowHybridSleep = "no"; # 禁用混合睡眠 (Hybrid Sleep)
+    AllowSuspendThenHibernate = "no"; # 禁用先睡眠后休眠
+  };
 
   # timezone and local
   time.timeZone = "Asia/Shanghai";
@@ -154,7 +154,6 @@
     xwayland.enable = true;
   };
   services.displayManager.gdm.enable = true;
-  services.displayManager.gdm.wayland = true;
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.gdm.enableGnomeKeyring = true;
 

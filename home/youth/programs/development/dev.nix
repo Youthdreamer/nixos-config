@@ -3,7 +3,7 @@
     typst
 
     nodejs_24
-    pnpm_9
+    pnpm_10
 
     # rustup
     rustc

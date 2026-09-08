@@ -1,9 +1,8 @@
 // "/-" comments out the following node.
 prefer-no-csd //移除终端等应用的标题栏
-spawn-at-startup "noctalia-shell"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "noctalia"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "fcitx5"
-// spawn-at-startup "noctalia-shell"
 spawn-sh-at-startup "sh -c 'wayvnc 0.0.0.0'"
 
 environment {  
@@ -203,15 +202,15 @@ binds {
     Mod+Return hotkey-overlay-title="打开终端: alacritty" { spawn "alacritty"; }
     Mod+Shift+Return hotkey-overlay-title="打开终端(浮动): alacritty" { spawn "alacritty" "--class" "floating_terminal"; }
     Mod+D hotkey-overlay-title="打开应用启动器: fuzzel" { spawn "fuzzel"; }
-    Mod+Shift+W hotkey-overlay-title="切换壁纸: swww" { spawn "~/.config/wallpaper/script/swww-rofi.sh"; }
+    Mod+Shift+W hotkey-overlay-title="切换壁纸: awww" { spawn "~/.config/wallpaper/script/awww-rofi.sh"; }
     Mod+G hotkey-overlay-title="截图与录屏" { spawn "~/.config/hypr/scripts/capture.sh"; }
     Mod+E hotkey-overlay-title="yazi文件管理器" { spawn "alacritty" "-e" "yazi"; }
     Mod+B hotkey-overlay-title="打开谷歌浏览器" { spawn "google-chrome-stable"; }
     Mod+Shift+B hotkey-overlay-title="打开火狐浏览器" { spawn "firefox"; }
     Mod+N hotkey-overlay-title="打开编辑器: neovim" { spawn "alacritty" "-e" "nvim"; }
-    Super+L hotkey-overlay-title="锁屏: noctalia-shell-lock" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Super+Shift+V hotkey-overlay-title="剪切板: noctalia-shell-clipboard" { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Super+S hotkey-overlay-title="多功能启动器: noctalia-shell-launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Super+L hotkey-overlay-title="锁屏: noctalia-lock" { spawn "noctalia" "msg" "session" "lock"; }
+    Super+Shift+V hotkey-overlay-title="剪切板: noctalia-clipboard" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Super+S hotkey-overlay-title="多功能启动器: noctalia-launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

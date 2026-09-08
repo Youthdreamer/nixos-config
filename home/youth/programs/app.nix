@@ -1,11 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     wechat
-    qq
     vlc
     discord
     obsidian
-    youtube-music
     spotify
     kdePackages.dolphin
   ];
