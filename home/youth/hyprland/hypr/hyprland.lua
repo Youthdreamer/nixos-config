@@ -312,6 +312,11 @@ hl.bind(mainMod .. "left", hl.dsp.focus({ direction = "l" }))
 hl.bind(mainMod .. "right", hl.dsp.focus({ direction = "r" }))
 hl.bind(mainMod .. "up", hl.dsp.focus({ direction = "u" }))
 hl.bind(mainMod .. "down", hl.dsp.focus({ direction = "d" }))
+-- 移动窗口交换位置
+hl.bind(super_shift .. "left", hl.dsp.window.swap({ direction = "l" }))
+hl.bind(super_shift .. "right", hl.dsp.window.swap({ direction = "r" }))
+hl.bind(super_shift .. "up", hl.dsp.window.swap({ direction = "u" }))
+hl.bind(super_shift .. "down", hl.dsp.window.swap({ direction = "d" }))
 
 -- 调整窗口大小
 -- 右箭头：向右下扩大（正数）

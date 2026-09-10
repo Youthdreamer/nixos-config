@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
     wechat
     vlc
@@ -35,6 +39,7 @@
   programs.firefox = {
     enable = true; # 安装并启用 Firefox
     languagePacks = ["zh-CN"]; # 中文语言包，可按需加其他
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles.default = {
       name = "default"; # 默认 profile 名称
       isDefault = true; # 设置为默认 profile

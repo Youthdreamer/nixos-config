@@ -40,7 +40,7 @@
       # };
       "Hotkey/TriggerKeys" = {"0" = "Super+space";};
     };
-    # addons.classicui.globalSection.Theme = "catppuccin-mocha-mauve";
+    addons.classicui.globalSection.Theme = "catppuccin-mocha-mauve";
   };
 
   # catppuccin的flake,option

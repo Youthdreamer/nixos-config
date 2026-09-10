@@ -112,6 +112,7 @@
   # yazi终端文件管理 主题
   programs.yazi = {
     enable = true;
+    shellWrapperName = "yy";
     enableZshIntegration = true;
   };
 
