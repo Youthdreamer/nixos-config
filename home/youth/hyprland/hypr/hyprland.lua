@@ -24,6 +24,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("xdg-desktop-portal-hyprland")
 	hl.exec_cmd("xdg-desktop-portal")
 	hl.exec_cmd("xdg-desktop-portal-hyprland --force-global")
+	-- 自定义用户服务
+	hl.exec_cmd("systemctl --user start env-loader.service")
 	-- 音频服务
 	hl.exec_cmd("systemd --user restart pipewire.service")
 	hl.exec_cmd("systemd --user restart pipewire-pulse.service")
