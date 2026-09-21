@@ -9,11 +9,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1788353817,
-        "narHash": "sha256-01FzY0iK4UI3gzmWkwl7DeZ5LjX5o/KApBh2njkRsqY=",
+        "lastModified": 1789990901,
+        "narHash": "sha256-3ldLafld4ZAuIruYPmrn7tvifNGZgexE637EeRdGXm0=",
         "owner": "Youthdreamer",
         "repo": "CookNixvim",
-        "rev": "abf95546c1f2e17957ef88320f6d9b6df8f76965",
+        "rev": "9fdda89a9dffd6cb533ab00a07e3a6ebc61da85b",
         "type": "github"
       },
       "original": {
