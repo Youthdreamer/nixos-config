@@ -46,9 +46,10 @@
 
   xdg.mimeApps.enable = true;
   xdg.mimeApps.defaultApplications = {
-    "image/png" = ["imv.desktop"];
-    "image/jpeg" = ["imv.desktop"];
-    "image/gif" = ["imv.desktop"];
+    "image/png" = "imv.desktop";
+    "image/jpeg" = "imv.desktop";
+    "image/gif" = "imv.desktop";
+    "inode/directory" = "org.kde.dolphin.desktop";
     "text/html" = "google-chrome.desktop";
     "x-scheme-handler/http" = "google-chrome.desktop";
     "x-scheme-handler/https" = "google-chrome.desktop";

@@ -24,6 +24,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # BiliBili 直播弹幕工具
+    bili-danmaku-tui.url = "github:Youthdreamer/bili-danmaku-tui";
+
     catppuccin.url = "github:catppuccin/nix/release-26.05";
 
     home-manager = {
@@ -38,6 +41,7 @@
     nixpkgs-unstable,
     home-manager,
     CookNixvim,
+    bili-danmaku-tui,
     agenix,
     catppuccin,
     noctalia,
@@ -79,6 +83,7 @@
               ];
               home.packages = [
                 CookNixvim.packages.${system}.default
+                bili-danmaku-tui.packages.${system}.default
               ];
             };
           }
